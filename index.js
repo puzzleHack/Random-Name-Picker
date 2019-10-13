@@ -1,9 +1,9 @@
 const Discord= require('discord.js');
 const bot = new Discord.Client();
-const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJwvg.8zJffs1paX_K8uFOOEx3V_XtC-E';
+const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJ1Sg.mKf57pkyXS1H40tvpKnsAtsJ8m0';
 
 //List of names 
-var array =[];
+var nameList =[];
 
 //On ready 
 bot.on('ready', ()=> {
@@ -23,17 +23,21 @@ bot.on('message', msg=>{
     if(msg.content === "beammeupscotty" || msg.content === "pickmescotty" || msg.content == "pickme") {
         //message.member.user.tag
         var user = msg.member.user.tag;
-        array.push(user);
-        msg.reply(' you have been added to the list!\n Current List: ' + array);
+        if(nameList.includes(user)) {
+            msg.reply("You're already on the list. If you want to go that bad, do the macarena!")
+        } else {
+            nameList.push(user);
+            msg.reply(' you have been added to the list!\n Current List: ' + nameList); 
+        }
     }
     
     if(msg.content === "reveal!" || msg.content === "letsinterview" || msg.content === "draw") {
-        if(array.length === 0) {
+        if(nameList.length === 0) {
             msg.reply("Either the list is empty, or I'm not in the mood!");
         } else {
-            shuffleArray(array);
-            var chosenOne = array.pop(); 
-            array = [];
+            shuffleArray(nameList);
+            var chosenOne = nameList.pop(); 
+            nameList = [];
             msg.reply(chosenOne + ' has been chosen! Good luck!');
         }
     }
