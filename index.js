@@ -1,6 +1,6 @@
 const Discord= require('discord.js');
 const bot = new Discord.Client();
-const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJkeQ.7KGFx0KWujWk8KkHP4e6NuGBE8c';
+const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJwvg.8zJffs1paX_K8uFOOEx3V_XtC-E';
 
 //List of names 
 var array =[];
@@ -20,13 +20,14 @@ function shuffleArray(array) {
 }
 
 bot.on('message', msg=>{
-    if(msg.content === "beammeupscotty" || msg.content === "pickmescotty") {
+    if(msg.content === "beammeupscotty" || msg.content === "pickmescotty" || msg.content == "pickme") {
         //message.member.user.tag
         var user = msg.member.user.tag;
         array.push(user);
         msg.reply(' you have been added to the list!\n Current List: ' + array);
     }
-    if(msg.content === "reveal!" || msg.content === "letsinterview") {
+    
+    if(msg.content === "reveal!" || msg.content === "letsinterview" || msg.content === "draw") {
         if(array.length === 0) {
             msg.reply("Either the list is empty, or I'm not in the mood!");
         } else {
