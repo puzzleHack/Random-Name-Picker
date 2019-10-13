@@ -20,7 +20,7 @@ function shuffleArray(array) {
 }
 
 bot.on('message', msg=>{
-    if(msg.content === "beammeupscotty" || msg.content === "pickmescotty") {
+    if(msg.content === "beammeupscotty" || msg.content === "pickmescotty" || msg.content == "pickme") {
         //message.member.user.tag
         var user = msg.member.user.tag;
         array.push(user);
