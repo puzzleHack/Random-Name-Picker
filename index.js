@@ -1,6 +1,6 @@
 const Discord= require('discord.js');
 const bot = new Discord.Client();
-const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJ1Sg.mKf57pkyXS1H40tvpKnsAtsJ8m0';
+const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJ9eg.eDozWTIIltSI_2hT0rDkVdOeccw';
 
 //List of names 
 var nameList =[];
@@ -41,6 +41,10 @@ bot.on('message', msg=>{
             msg.reply(chosenOne + ' has been chosen! Good luck!');
         }
     }
+
+    if(msg.content === "rnp-help") {
+            msg.reply(" I can do all sorts of things!\n**Commands to join interview pool**: 'beammeupscotty', 'pickmescotty', 'pickme'\n**Commands to pick a name:** 'draw', 'letsinterview', 'reveal!' ");
+        }
 })
 
 bot.login(token);
