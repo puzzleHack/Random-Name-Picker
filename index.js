@@ -1,6 +1,7 @@
 const Discord= require('discord.js');
 const bot = new Discord.Client();
-const token = 'NjMyNzE2ODMyMzMxMTM3MDQz.XaJ9eg.eDozWTIIltSI_2hT0rDkVdOeccw';
+const config = require('./config.json');
+const token = config.TOKEN;
 
 //List of names 
 var nameList =[];
